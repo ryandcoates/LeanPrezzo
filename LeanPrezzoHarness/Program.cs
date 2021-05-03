@@ -37,6 +37,7 @@ namespace LeanPrezzoHarness
                 int voteOnTopicInt = Convert.ToInt32(voteOnTopic);
 
                 Prezzo.Topics[voteOnTopicInt-1].ApplyVote(user);
+                Console.WriteLine("You have {0} votes left, {1}", user.Votes, user.Name);
             }
         }
     }

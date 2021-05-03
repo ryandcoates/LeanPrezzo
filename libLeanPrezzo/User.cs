@@ -10,14 +10,14 @@ namespace libLeanPrezzo
 
         public User(string name, int votes)
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             Name = name;
             Votes = votes;
         }
 
         public void Vote()
         {
-            Votes = Votes--;
+            Votes = Votes -1;
         }
     }
 }
