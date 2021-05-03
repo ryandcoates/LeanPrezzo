@@ -1,0 +1,45 @@
+﻿@page "/prezzo"
+@inject HttpClient Http
+
+<h1>LeanPrezzo</h1>
+<br />
+
+@if (prezzo == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h2>@prezzo.Title</h2>
+    <p>@prezzo.Description</p>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Description</th>
+                <th>Current Votes</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var topic in prezzo.Topics)
+            {
+                <tr>
+                    <td>@topic.Title</td>
+                    <td>@topic.Description</td>
+                    <td>@topic.CurrentVotes</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private libLeanPrezzo.Presentation prezzo;
+
+    protected override async Task OnInitializedAsync()
+    {
+        prezzo = await Http.GetFromJsonAsync<libLeanPrezzo.Presentation>("sample-data/testprezzo.json");
+    }
+
+}

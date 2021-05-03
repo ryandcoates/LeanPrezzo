@@ -1,0 +1,20 @@
+{
+  "title": "Demo Presentation",
+  "description": "This is a sample presentation for testing",
+  "defaultVotes": 3,
+  "topics": [
+    {
+      "title": "Topic 1",
+      "description": "This is a sample topic",
+      "currentVotes": 0
+    },
+    {
+      "title": "Topic 2",
+      "description": "This is another topic",
+      "currentVotes": 0
+    }
+  ],
+  "participants": [
+
+  ]
+}
