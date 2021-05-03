@@ -1,0 +1,12 @@
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\bin\Debug\net5.0\libLeanPrezzo.deps.json
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\bin\Debug\net5.0\libLeanPrezzo.dll
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\bin\Debug\net5.0\ref\libLeanPrezzo.dll
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\bin\Debug\net5.0\libLeanPrezzo.pdb
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\obj\Debug\net5.0\libLeanPrezzo.csprojAssemblyReference.cache
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\obj\Debug\net5.0\libLeanPrezzo.GeneratedMSBuildEditorConfig.editorconfig
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\obj\Debug\net5.0\libLeanPrezzo.AssemblyInfoInputs.cache
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\obj\Debug\net5.0\libLeanPrezzo.AssemblyInfo.cs
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\obj\Debug\net5.0\libLeanPrezzo.csproj.CoreCompileInputs.cache
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\obj\Debug\net5.0\libLeanPrezzo.dll
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\obj\Debug\net5.0\ref\libLeanPrezzo.dll
+c:\data\code\repos\ryandcoates\LeanPrezzo\libLeanPrezzo\obj\Debug\net5.0\libLeanPrezzo.pdb
