@@ -10,36 +10,79 @@
 }
 else
 {
-    <h2>@prezzo.Title</h2>
-    <p>@prezzo.Description</p>
-    <br />
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Topic</th>
-                <th>Description</th>
-                <th>Current Votes</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var topic in prezzo.Topics)
-            {
+    <div>
+        <h2>@prezzo.Title</h2>
+        <p>@prezzo.Description</p>
+        <br />
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>@topic.Title</td>
-                    <td>@topic.Description</td>
-                    <td>@topic.CurrentVotes</td>
+                    <th>Topic</th>
+                    <th>Description</th>
+                    <th>Current Votes</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var topic in prezzo.Topics)
+                {
+                    <tr @key="@topic">
+                        <td>@topic.Title</td>
+                        <td>@topic.Description</td>
+                        <td>@topic.CurrentVotes</td>
+                        <td><button type="button" @onclick="@(() => prezzo.Topics.Remove(topic))">Remove</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <br />
+
+    </div>
 }
-
-@code {
-    private libLeanPrezzo.Presentation prezzo;
-
-    protected override async Task OnInitializedAsync()
+    @if (newTopic == null)
     {
-        prezzo = await Http.GetFromJsonAsync<libLeanPrezzo.Presentation>("sample-data/testprezzo.json");
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-header">
+                Add a Topic
+            </div>
+            <div class="card-body">
+                <EditForm Model="@newTopic" OnValidSubmit="@HandleValidSubmit">
+                    <div class="form-group">
+                        <label for="titleInput">Title</label>
+                        <InputText class="form-control" id="titleInput" @bind-Value="newTopic.Title" />
+                    </div>
+                    <div class="form-group">
+                        <label for="titleInput">Description</label>
+                        <InputText class="form-control" id="descriptionInput" @bind-Value="newTopic.Description" />
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </EditForm>
+                <div>@success</div>
+            </div>
+        </div>
     }
 
-}
+    @code {
+        private libLeanPrezzo.Topic newTopic = new libLeanPrezzo.Topic();
+        private libLeanPrezzo.Presentation prezzo;
+        private string success = "";
+
+        protected override async Task OnInitializedAsync()
+        {
+            //var json = await Http.GetFromJsonAsync("sample-data/testprezzo.json");
+            prezzo = await Http.GetFromJsonAsync<libLeanPrezzo.Presentation>("sample-data/testprezzo.json");
+        }
+
+        public void HandleValidSubmit()
+        {
+            prezzo.AddTopic(newTopic);
+            success = "success";
+            newTopic = new libLeanPrezzo.Topic();
+        }
+
+    }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json;
 using libLeanPrezzo;
 
 namespace LeanPrezzoHarness
@@ -21,6 +22,14 @@ namespace LeanPrezzoHarness
             Console.WriteLine("Welcome {0}, you have {1} vote(s) remaining", user.Name, user.Votes);
 
             Console.WriteLine("The Presentation has {0} Topics", Prezzo.Topics.Count);
+
+            Console.WriteLine("Do you want to add a topic? if so Press (A)");
+            var addTopic = Console.ReadLine();
+            if(addTopic.ToString().ToUpper() == "A")
+            {
+                Prezzo.AddTopic("Topic3", "Yet another topic, the third in fact!");
+                Console.WriteLine("The Presentation has {0} Topics", Prezzo.Topics.Count);
+            }
             
             while(user.Votes > 0) 
             { 
@@ -39,6 +48,9 @@ namespace LeanPrezzoHarness
                 Prezzo.Topics[voteOnTopicInt-1].ApplyVote(user);
                 Console.WriteLine("You have {0} votes left, {1}", user.Votes, user.Name);
             }
+
+            Console.WriteLine(JsonSerializer.Serialize(Prezzo));
+
         }
     }
 }

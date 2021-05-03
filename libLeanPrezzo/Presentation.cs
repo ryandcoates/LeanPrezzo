@@ -14,9 +14,9 @@ namespace libLeanPrezzo
 
         public int DefaultVotes { get; init; }
         
-        public List<Topic> Topics { get; private set; }
+        public List<Topic> Topics { get; init; }
 
-        public List<User> Participants { get; private set; }
+        public List<User> Participants { get; init; }
 
         public Presentation(string title, string description, int defaultVotes)
         {
@@ -32,6 +32,10 @@ namespace libLeanPrezzo
             Topic _topic = new Topic(topicName, topicDescription);
     
             this.Topics.Add(_topic);
+        }
+        public void AddTopic(Topic topic)
+        {
+            this.Topics.Add(topic);
         }
 
         public User AddParticipant(string name)

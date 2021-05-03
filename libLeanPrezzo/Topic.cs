@@ -8,11 +8,15 @@ namespace libLeanPrezzo
 {
     public class Topic
     {
-        public string Title { get; init; }
-        public string Description { get; init; }
+        public string Title { get; set; }
+        public string Description { get; set; }
 
         public int CurrentVotes { get; private set; }
 
+        public Topic()
+        {
+
+        }
         public Topic(string title, string description)
         {
             Title = title;

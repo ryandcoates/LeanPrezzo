@@ -1,20 +1,29 @@
 {
-  "title": "Demo Presentation",
-  "description": "This is a sample presentation for testing",
-  "defaultVotes": 3,
-  "topics": [
+  "Title": "Test Presentation",
+  "Description": "This is a Test Presentation",
+  "DefaultVotes": 5,
+  "Topics": [
     {
-      "title": "Topic 1",
-      "description": "This is a sample topic",
-      "currentVotes": 0
+      "Title": "Topic1",
+      "Description": "Default Topic",
+      "CurrentVotes": 1
     },
     {
-      "title": "Topic 2",
-      "description": "This is another topic",
-      "currentVotes": 0
+      "Title": "Topic2",
+      "Description": "Another Topic",
+      "CurrentVotes": 2
+    },
+    {
+      "Title": "Topic3",
+      "Description": "Yet another topic, the third in fact!",
+      "CurrentVotes": 2
     }
   ],
-  "participants": [
-
+  "Participants": [
+    {
+      "Id": "88af03b9-07ab-4fd3-9bc7-2a01796e927b",
+      "Name": "Bob",
+      "Votes": 0
+    }
   ]
 }
