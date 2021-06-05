@@ -1,6 +1,6 @@
 {
-  "Title": "Test Presentation",
-  "Description": "This is a Test Presentation",
+  "Title": "Test Presentation3",
+  "Description": "This is a Test Presentation with data represented in a json file",
   "DefaultVotes": 5,
   "Topics": [
     {

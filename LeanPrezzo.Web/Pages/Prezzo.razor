@@ -1,6 +1,29 @@
 ﻿@page "/prezzo"
 @inject HttpClient Http
 
+<style>
+    .grid {
+        display: grid;
+        grid-gap: 10px;
+        grid-row-gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cell {
+        flex: 0 0 32%; /* don't grow, don't shrink, width */
+        height: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: #999;
+        border-radius: 5px;
+    }
+
+    .cell:nth-child(3n) {
+        background-color: #F00;
+    }
+</style>
 <h1>LeanPrezzo</h1>
 <br />
 
@@ -14,58 +37,22 @@ else
         <h2>@prezzo.Title</h2>
         <p>@prezzo.Description</p>
         <br />
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Topic</th>
-                    <th>Description</th>
-                    <th>Current Votes</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var topic in prezzo.Topics)
-                {
-                    <tr @key="@topic">
-                        <td>@topic.Title</td>
-                        <td>@topic.Description</td>
-                        <td>@topic.CurrentVotes</td>
-                        <td><button type="button" @onclick="@(() => prezzo.Topics.Remove(topic))">Remove</button></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+        <div class="grid">
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+        </div>
         <br />
 
     </div>
 }
-    @if (newTopic == null)
-    {
-        <p><em>Loading...</em></p>
-    }
-    else
-    {
-        <div class="card">
-            <div class="card-header">
-                Add a Topic
-            </div>
-            <div class="card-body">
-                <EditForm Model="@newTopic" OnValidSubmit="@HandleValidSubmit">
-                    <div class="form-group">
-                        <label for="titleInput">Title</label>
-                        <InputText class="form-control" id="titleInput" @bind-Value="newTopic.Title" />
-                    </div>
-                    <div class="form-group">
-                        <label for="titleInput">Description</label>
-                        <InputText class="form-control" id="descriptionInput" @bind-Value="newTopic.Description" />
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </EditForm>
-                <div>@success</div>
-            </div>
-        </div>
-    }
+    
 
     @code {
         private libLeanPrezzo.Topic newTopic = new libLeanPrezzo.Topic();
@@ -78,11 +65,10 @@ else
             prezzo = await Http.GetFromJsonAsync<libLeanPrezzo.Presentation>("sample-data/testprezzo.json");
         }
 
-        public void HandleValidSubmit()
+        public void HandleValidVote(int topicId)
         {
-            prezzo.AddTopic(newTopic);
+            // prezzo.Topics[topicId].ApplyVote;
             success = "success";
-            newTopic = new libLeanPrezzo.Topic();
         }
 
     }
