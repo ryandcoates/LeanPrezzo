@@ -8,15 +8,15 @@ namespace libLeanPrezzo
 {
     public class Presentation
     {
-        public string Title { get; init; }
+        public string Title { get; set; }
 
-        public string Description { get; init; }
+        public string Description { get; set; }
 
-        public int DefaultVotes { get; init; }
+        public int DefaultVotes { get; set; }
         
-        public List<Topic> Topics { get; init; }
+        public List<Topic> Topics { get; set; }
 
-        public List<User> Participants { get; init; }
+        public List<User> Participants { get; set; }
 
         public Presentation(string title, string description, int defaultVotes)
         {

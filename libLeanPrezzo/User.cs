@@ -4,8 +4,8 @@ namespace libLeanPrezzo
 {
     public class User
     {
-        public Guid Id { get; init; }
-        public string Name { get; init; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
         public int Votes { get; private set; }
 
         public User(string name, int votes)
