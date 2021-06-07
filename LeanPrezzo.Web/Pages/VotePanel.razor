@@ -1,0 +1,41 @@
+﻿
+<style>
+    .grid {
+        display: grid;
+        grid-gap: 10px;
+        grid-row-gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cell {
+        flex: 0 0 32%; /* don't grow, don't shrink, width */
+        height: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: #999;
+        border-radius: 5px;
+    }
+
+        .cell:nth-child(3n) {
+            background-color: #F00;
+        }
+</style>
+
+
+        <div class="grid">
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+            <div class="cell">item</div>
+        </div>
+
+@code {
+
+}

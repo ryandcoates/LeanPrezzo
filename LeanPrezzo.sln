@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "libLeanPrezzo", "libLeanPre
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeanPrezzo.Web", "LeanPrezzo.Web\LeanPrezzo.Web.csproj", "{0A984732-F4AC-498E-B7AE-15AF472F0D21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanPrezzo.Api", "LeanPrezzo.Api\LeanPrezzo.Api.csproj", "{8082B780-62A0-4E26-82C0-4EE1B0A60CDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeanPrezzo.Api", "LeanPrezzo.Api\LeanPrezzo.Api.csproj", "{8082B780-62A0-4E26-82C0-4EE1B0A60CDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
