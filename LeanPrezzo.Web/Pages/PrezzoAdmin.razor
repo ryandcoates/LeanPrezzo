@@ -106,7 +106,10 @@ else
     protected override async Task OnInitializedAsync()
     {
         //var json = await Http.GetFromJsonAsync("sample-data/testprezzo.json");
-        prezzo = await Http.GetFromJsonAsync<libLeanPrezzo.Presentation>("sample-data/testprezzo.json");
+
+        prezzo = await Http.GetFromJsonAsync<libLeanPrezzo.Presentation>("sample-data/the-rest-of-the-org.json");
+        //prezzo = await Http.GetFromJsonAsync<libLeanPrezzo.Presentation>("sample-data/testprezzo.json");
+
     }
 
     protected override async Task OnParametersSetAsync()

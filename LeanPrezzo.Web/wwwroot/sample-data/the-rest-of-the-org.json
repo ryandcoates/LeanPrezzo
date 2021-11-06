@@ -1,0 +1,59 @@
+{
+  "Title": "The Rest of the Org",
+  "Description": "Developers! Developers! Developers! but what about the rest of the technology organization?",
+  "DefaultVotes": 5,
+  "Topics": [
+    {
+      "Title": "What even is the DevOps?",
+      "Description": "DevOps! Is it a job? A skillset? A set of tools? All of the above? It’s none of those things, but all of those things, lets talk about that",
+      "CurrentVotes": 1
+    },
+    {
+      "Title": "What do Ops people do for me?",
+      "Description": "Ops people! The Devs arch nemesis and antihero of corporate IT, but are they really here just to get in your way? To slow down your progress and complain about deploying your new features? Not quite, lets talk about what IT Operations does, and how they support you",
+      "CurrentVotes": 2
+    },
+    {
+      "Title": "GitOps! Source Control all the things",
+      "Description": "Git! It’s not just for application code. Modern IT Operations uses Git to store scripts, build tooling, compliance files, presentations, system configurations and more, you name it, Git can likely add some value to it if you are following DevOps principles.",
+      "CurrentVotes": 2
+    },
+    {
+      "Title": "Architecture, what, why, and how do I get in on that?",
+      "Description": "Software Architecture, top of the pile? Fork in the road? Path to riches? Architects come in all sorts of shapes and sizes with a broad spectrum of roles and responsibilities, but sometimes at a cost, is Architecture for you? Lets discuss",
+      "CurrentVotes": 0
+    },
+    {
+      "Title": "What’s a pipeline, why do I want one?",
+      "Description": "Pipelines! Some say they are all it takes to do the DevOps, some say YAML exists solely to taunt pipeline admins, but what are they, and why do they matter to devs?,",
+      "CurrentVotes": 0
+    },
+    {
+      "Title": "Automating all the things, for real though",
+      "Description": "As devs we have an innate need to be lazy, automating all the things can help with that, where to start? Lets go through some automation scenarios to save you time and decrease errors.",
+      "CurrentVotes": 0
+    },
+    {
+      "Title": "Stop using CMD!",
+      "Description": "I don’t know why Jake still uses CMD for everything, but you should stop! Lets talk about the fully Turing complete scripting language and shell built into windows for the last ten years, and now cross-platform!",
+      "CurrentVotes": 0
+    },
+    {
+      "Title": "Chocolatey, the Windows Package manager",
+      "Description": "How fun was it installing all those packages at the start of class? Let me introduce you to binary package management in Windows with Chocolatey, and never sweat toolchain installation again.",
+      "CurrentVotes": 0
+    },
+    {
+      "Title": "The Cloud: Storm coming? Or just a bit of drizzle",
+      "Description": "Increase your salary and decrease your IT spend by putting the word cloud somewhere in your company manifesto! But seriously, the Cloud has changed the way we develop applications and deploy services, lets talk about it and introduce you to some of its pros and cons",
+      "CurrentVotes": 0
+    }
+  ],
+  "Participants": [
+    {
+      "Id": "88af03b9-07ab-4fd3-9bc7-2a01796e927b",
+      "Name": "Bob",
+      "Votes": 0
+    }
+  ]
+}

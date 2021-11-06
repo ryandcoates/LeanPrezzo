@@ -1,0 +1,112 @@
+openapi: 3.1.0
+info:
+  title: LeanPrezzo API
+  version: '2021-09-01'
+  contact:
+    name: Ryan Coates
+    email: ryan@rdc.dev
+  summary: Backend API for handling Lean Prezzo planning session
+  description: ''
+servers:
+  - url: 'http://localhost:5800/api'
+    description: dev
+paths:
+  /prezzos:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          $ref: '#/components/responses/Prezzos'
+      operationId: get-prezzos
+  '/prezzos/{id}/participants':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    post:
+      summary: ''
+      operationId: post-prezzos-id-participants
+      responses:
+        '200':
+          description: OK
+      description: ''
+x-rdc-version: '2021-09-01'
+components:
+  schemas:
+    Presentation:
+      title: Presentation
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        default_votes:
+          type: number
+        topics:
+          type: array
+          items:
+            $ref: '#/components/schemas/Topic'
+        participants:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+      examples:
+        - title: string
+          description: string
+          default_votes: 5
+          topics:
+            - title: Great Topic 1
+              description: this should be obvious by now
+              current_votes: 2
+          participants:
+            - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+              name: Bill
+              votes: 3
+    Topic:
+      title: Topic
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        current_votes:
+          type: number
+      examples:
+        - title: A Brief History of API
+          description: Lets talk about APIs and where they come from
+          current_votes: 0
+    User:
+      title: User
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+          x-faker: name.firstname
+        votes:
+          type: number
+      examples:
+        - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+          name: Ryan
+          votes: 5
+  responses:
+    Prezzos:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Presentation'
