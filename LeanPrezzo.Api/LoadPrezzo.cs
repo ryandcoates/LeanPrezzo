@@ -5,12 +5,12 @@ using Microsoft.Extensions.Logging;
 
 namespace LeanPrezzo.Api
 {
-    public static class LoadPrezzo
-    {
-        [FunctionName("LoadPrezzo")]
-        public static void Run([QueueTrigger("myqueue-items", Connection = "")]string myQueueItem, ILogger log)
-        {
-            log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
-        }
-    }
+  public static class LoadPrezzo
+  {
+    // [FunctionName("LoadPrezzo")]
+    // public static void Run([QueueTrigger("myqueue-items", Connection = "")] string myQueueItem, ILogger log)
+    // {
+    //   log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
+    // }
+  }
 }
