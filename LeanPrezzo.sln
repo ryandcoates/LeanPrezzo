@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeanPrezzo.Web", "LeanPrezz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeanPrezzo.Api", "LeanPrezzo.Api\LeanPrezzo.Api.csproj", "{8082B780-62A0-4E26-82C0-4EE1B0A60CDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanPrezzo.Data", "LeanPrezzo.Data\LeanPrezzo.Data.csproj", "{00ECDEB7-52B8-4064-BBA2-795D1226AC4C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{8082B780-62A0-4E26-82C0-4EE1B0A60CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8082B780-62A0-4E26-82C0-4EE1B0A60CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8082B780-62A0-4E26-82C0-4EE1B0A60CDD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{00ECDEB7-52B8-4064-BBA2-795D1226AC4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{00ECDEB7-52B8-4064-BBA2-795D1226AC4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{00ECDEB7-52B8-4064-BBA2-795D1226AC4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{00ECDEB7-52B8-4064-BBA2-795D1226AC4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
