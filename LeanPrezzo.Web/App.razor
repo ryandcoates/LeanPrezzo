@@ -1,5 +1,9 @@
+@using libLeanPrezzo
+@inject HttpClient Http
+
 <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
     <Found Context="routeData">
+        <h3>Server Status: @ServerStatus.State - @ServerStatus.Code</h3>
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
     </Found>
     <NotFound>
@@ -8,3 +12,16 @@
         </LayoutView>
     </NotFound>
 </Router>
+
+
+@code {
+
+    public ServerStatus ServerStatus = new ServerStatus();
+
+    protected override async Task OnInitializedAsync()
+    {
+        @* TODO call to azure function for cold start *@
+        ServerStatus = await Http.GetFromJsonAsync<ServerStatus>("https://leanprezzo-api.azurewebsites.net/api/server-status");
+        Console.WriteLine("My debug output."); //Will show in the browser console.
+    }
+}
