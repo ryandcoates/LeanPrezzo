@@ -1,4 +1,5 @@
 @using libLeanPrezzo
+@using LeanPrezo.Web.Utils
 @inject HttpClient Http
 
 <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
@@ -21,7 +22,15 @@
     protected override async Task OnInitializedAsync()
     {
         @* TODO call to azure function for cold start *@
-        ServerStatus = await Http.GetFromJsonAsync<ServerStatus>("https://leanprezzo-api.azurewebsites.net/api/server-status");
-        Console.WriteLine("My debug output."); //Will show in the browser console.
+        try
+        {
+            var url = HttpHelper.Get("api/server-status");
+            Console.WriteLine($"[FETCHING] {url}"); //Will show in the browser console.
+            ServerStatus = await Http.GetFromJsonAsync<ServerStatus>(url);
+        }
+        catch (System.Exception e)
+        {
+            Console.Write("[REQUEST_ERROR]" + e.Message);
+        }
     }
 }

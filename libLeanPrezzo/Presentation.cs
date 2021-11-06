@@ -17,15 +17,12 @@ namespace libLeanPrezzo
 
     public List<Topic> Topics { get; set; }
 
-    public List<User> Participants { get; set; }
-
     public Presentation(Guid id, string title, string description, int defaultVotes)
     {
       Id = id;
       Title = title;
       Description = description;
       DefaultVotes = defaultVotes;
-      Participants = new List<User>();
       Topics = new List<Topic>();
     }
 
@@ -39,15 +36,5 @@ namespace libLeanPrezzo
     {
       this.Topics.Add(topic);
     }
-
-    public User AddParticipant(string name)
-    {
-      var participant = new User(name, this.DefaultVotes);
-
-      this.Participants.Add(participant);
-
-      return participant;
-    }
-
   }
 }

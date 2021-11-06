@@ -9,6 +9,9 @@ namespace LeanPrezzoHarness
     static void Main(string[] args)
     {
       Presentation Prezzo = new Presentation(Guid.NewGuid(), "Test Presentation", "This is a Test Presentation", 5);
+      PresentationSession PrezzoSession = new PresentationSession();
+      PrezzoSession.PresentationId = Prezzo.Id;
+      PrezzoSession.Presentation = Prezzo;
 
       Prezzo.AddTopic("Topic1", "Default Topic");
       Prezzo.AddTopic("Topic2", "Another Topic");
@@ -16,7 +19,7 @@ namespace LeanPrezzoHarness
       Console.WriteLine("What is your name? ");
       string userName = Console.ReadLine();
 
-      User user = Prezzo.AddParticipant(userName);
+      Participant user = PrezzoSession.AddParticipant(userName);
 
       Console.WriteLine("Welcome {0}, you have {1} vote(s) remaining", user.Name, user.Votes);
 

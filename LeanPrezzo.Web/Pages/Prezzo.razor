@@ -14,34 +14,31 @@ else
         <h2>@prezzo.Title</h2>
         <p>@prezzo.Description</p>
         <br />
-        
+
         <VotePanel />
 
         <br />
 
         <VotePanel />
-    
+
     </div>
 }
 
+@code {
+    private libLeanPrezzo.Topic newTopic = new libLeanPrezzo.Topic();
+    private libLeanPrezzo.Presentation prezzo;
+    private string success = "";
 
+    protected override async Task OnInitializedAsync()
+    {
+        //var json = await Http.GetFromJsonAsync("sample-data/testprezzo.json");
+        prezzo = await Http.GetFromJsonAsync<libLeanPrezzo.Presentation>("sample-data/testprezzo.json");
+    }
 
+    public void HandleValidVote(int topicId)
+    {
+        // prezzo.Topics[topicId].ApplyVote;
+        success = "success";
+    }
 
-        @code {
-        private libLeanPrezzo.Topic newTopic = new libLeanPrezzo.Topic();
-        private libLeanPrezzo.Presentation prezzo;
-        private string success = "";
-
-        protected override async Task OnInitializedAsync()
-        {
-            //var json = await Http.GetFromJsonAsync("sample-data/testprezzo.json");
-            prezzo = await Http.GetFromJsonAsync<libLeanPrezzo.Presentation>("sample-data/testprezzo.json");
-        }
-
-        public void HandleValidVote(int topicId)
-        {
-            // prezzo.Topics[topicId].ApplyVote;
-            success = "success";
-        }
-
-        }
+}
